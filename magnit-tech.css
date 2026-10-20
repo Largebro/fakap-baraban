@@ -1,0 +1,390 @@
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('/fonts/NunitoSans-Variable.ttf') format('truetype');
+  font-weight: 200 1000;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('/fonts/NunitoSans-Italic-Variable.ttf') format('truetype');
+  font-weight: 200 1000;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RF Dewi Extended';
+  src: url('/fonts/RFDewiExtended-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Magnit Tech — theme из PPTX / Visual Guidelines */
+  --mt-red: #ed0f00;
+  --mt-ink: #121212;
+  --mt-white: #ffffff;
+  --mt-surface-light: #f5f5f5;
+  --mt-surface-dark: #121212;
+  --mt-ink-muted: #5c5c5c;
+  --mt-ink-muted-on-dark: #b3b3b3;
+  --mt-border: #e0e0e0;
+  --mt-red-soft: rgb(237 15 0 / 0.1);
+
+  --mt-accent-pink: #f36de5;
+  --mt-accent-orange: #ffb854;
+  --mt-accent-green: #41e786;
+  --mt-accent-blue: #7f9fff;
+
+  --mt-font-sans: 'Nunito Sans', system-ui, sans-serif;
+  --mt-font-display: 'RF Dewi Extended', 'Nunito Sans', system-ui, sans-serif;
+  --mt-font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* Светлая тема (Light Theme.pptx) */
+.slidev-layout.mt-light {
+  --mt-bg: var(--mt-surface-light);
+  --mt-fg: var(--mt-ink);
+  --mt-muted: var(--mt-ink-muted);
+  --mt-logo: red;
+  --slidev-code-background: #ffffff;
+  --slidev-code-foreground: var(--mt-ink);
+  --slidev-code-tab-divider: var(--mt-border);
+  --slidev-code-tab-text-color: var(--mt-ink-muted);
+  --slidev-code-tab-active-text-color: var(--mt-ink);
+  background: var(--mt-bg);
+  color: var(--mt-fg);
+}
+
+/* Тёмная тема (Dark Theme.pptx) */
+.slidev-layout.mt-dark {
+  --mt-bg: var(--mt-surface-dark);
+  --mt-fg: var(--mt-white);
+  --mt-muted: var(--mt-ink-muted-on-dark);
+  --mt-logo: white;
+  --slidev-code-background: #252525;
+  --slidev-code-foreground: #f0f0f0;
+  --slidev-code-tab-divider: rgb(255 255 255 / 0.12);
+  --slidev-code-tab-text-color: var(--mt-ink-muted-on-dark);
+  --slidev-code-tab-active-text-color: var(--mt-white);
+  background: var(--mt-bg);
+  color: var(--mt-fg);
+}
+
+.slidev-layout {
+  font-family: var(--mt-font-sans);
+}
+
+.slidev-layout h1,
+.slidev-layout .mt-display {
+  font-family: var(--mt-font-display);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: var(--mt-fg);
+}
+
+.slidev-layout .mt-lead {
+  font-size: 1.35rem;
+  line-height: 1.35;
+  color: var(--mt-muted);
+  font-weight: 400;
+}
+
+.slidev-layout .mt-kicker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mt-red);
+}
+
+.slidev-layout.mt-dark .mt-kicker {
+  color: var(--mt-red);
+}
+
+.slidev-layout h2 {
+  font-family: var(--mt-font-sans);
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--mt-red);
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.slidev-layout h3 {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.slidev-layout a {
+  color: var(--mt-red);
+  text-decoration: none;
+}
+
+.slidev-layout a:hover {
+  text-decoration: underline;
+}
+
+.slidev-layout code,
+.slidev-layout pre {
+  font-family: var(--mt-font-mono);
+}
+
+/* Блоки кода — контраст к фону слайда */
+.slidev-layout.mt-light .slidev-code,
+.slidev-layout.mt-light .slidev-monaco-container,
+.slidev-layout.mt-light .shiki {
+  border: 1px solid var(--mt-border);
+}
+
+.slidev-layout.mt-light .slidev-code,
+.slidev-layout.mt-light .slidev-monaco-container {
+  box-shadow: 0 1px 2px rgb(18 18 18 / 0.06);
+}
+
+/* Shiki: тема по классу слайда, не по html.dark / colorSchema */
+.slidev-layout.mt-light .shiki {
+  color: var(--shiki-light, var(--mt-ink)) !important;
+  background: var(--slidev-code-background) !important;
+}
+
+.slidev-layout.mt-light .shiki span {
+  color: var(--shiki-light, inherit) !important;
+}
+
+.slidev-layout.mt-dark .shiki {
+  color: var(--shiki-dark, #f0f0f0) !important;
+  background: var(--slidev-code-background) !important;
+}
+
+.slidev-layout.mt-dark .shiki span {
+  color: var(--shiki-dark, inherit) !important;
+}
+
+/* Inline-токены (`…`), не fenced-блоки (.shiki) */
+.slidev-layout.mt-dark :not(pre) > code:not(.shiki) {
+  background: var(--mt-white);
+  color: var(--mt-ink);
+}
+
+.slidev-layout.mt-light :not(pre) > code:not(.shiki) {
+  background: var(--mt-white);
+  color: var(--mt-ink);
+  border: 1px solid var(--mt-border);
+}
+
+.slidev-layout blockquote {
+  border-left: 4px solid var(--mt-red);
+  padding-left: 1rem;
+  color: var(--mt-muted);
+  font-style: normal;
+}
+
+.slidev-layout table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.slidev-layout table th {
+  background: rgb(18 18 18 / 0.06);
+  border-bottom: 2px solid var(--mt-red);
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  font-weight: 700;
+}
+
+.slidev-layout.mt-dark table th {
+  background: rgb(255 255 255 / 0.08);
+}
+
+.slidev-layout table td {
+  border-bottom: 1px solid var(--mt-border);
+  padding: 0.55rem 0.75rem;
+}
+
+.slidev-layout.mt-dark table td {
+  border-bottom-color: rgb(255 255 255 / 0.12);
+}
+
+.slidev-layout .mt-brand-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 6px;
+  height: 100%;
+  background: var(--mt-red);
+}
+
+.slidev-layout .mt-metric {
+  font-family: var(--mt-font-display);
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--mt-red);
+}
+
+.slidev-layout .mt-metric-label {
+  font-size: 0.95rem;
+  color: var(--mt-muted);
+  margin-top: 0.35rem;
+}
+
+.slidev-layout .mt-quote-card {
+  background: rgb(18 18 18 / 0.04);
+  border-radius: 0.5rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 4px solid var(--mt-red);
+}
+
+.slidev-layout.mt-dark .mt-quote-card {
+  background: rgb(255 255 255 / 0.06);
+}
+
+.slidev-layout .mt-chart-placeholder {
+  border: 2px dashed var(--mt-border);
+  border-radius: 0.5rem;
+  min-height: 14rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mt-muted);
+  font-size: 0.95rem;
+}
+
+.slidev-layout.mt-dark .mt-chart-placeholder {
+  border-color: rgb(255 255 255 / 0.2);
+}
+
+/* Таймлайн — «Слайд с таймлайном» (slideLayout17) */
+.slidev-layout.magnit-timeline .mt-timeline-header {
+  margin-bottom: 2rem;
+}
+
+.slidev-layout.magnit-timeline h1 {
+  font-size: 1.875rem;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.slidev-layout.magnit-timeline .mt-timeline-body {
+  margin-bottom: 1.75rem;
+}
+
+.slidev-layout.magnit-timeline .mt-timeline-track {
+  width: 100%;
+  padding: 0;
+}
+
+.slidev-layout.magnit-timeline .mt-timeline-columns {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.slidev-layout.magnit-timeline .mt-timeline-col {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  min-height: 9.5rem;
+  padding: 0 0.75rem 0.5rem;
+  border-right: 1px solid #c8c8c8;
+}
+
+.slidev-layout.magnit-timeline .mt-timeline-col:last-child {
+  border-right: none;
+}
+
+.slidev-layout.magnit-timeline .mt-timeline-year {
+  display: inline-block;
+  margin: 0 0 1.1rem;
+  padding: 0.45rem 1.35rem;
+  border-radius: 9999px;
+  background: #9e9e9e;
+  color: var(--mt-white);
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.slidev-layout.mt-dark.magnit-timeline .mt-timeline-year {
+  background: rgb(255 255 255 / 0.22);
+}
+
+.slidev-layout.mt-dark.magnit-timeline .mt-timeline-col {
+  border-right-color: rgb(255 255 255 / 0.2);
+}
+
+.slidev-layout.mt-dark.magnit-timeline .mt-timeline-rail::before {
+  background: rgb(255 255 255 / 0.2);
+}
+
+.slidev-layout.magnit-timeline .mt-timeline-rail {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 1.125rem;
+  margin-bottom: 0.75rem;
+}
+
+.slidev-layout.magnit-timeline .mt-timeline-rail::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: #c8c8c8;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.slidev-layout.magnit-timeline .mt-timeline-dot {
+  position: relative;
+  z-index: 1;
+  display: block;
+  flex-shrink: 0;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  background: var(--mt-ink);
+  box-shadow: 0 0 0 3px var(--mt-bg);
+}
+
+.slidev-layout.magnit-timeline .mt-timeline-dot--highlight {
+  width: 1rem;
+  height: 1rem;
+  background: var(--mt-red);
+}
+
+.slidev-layout.magnit-timeline .mt-timeline-dot--accent {
+  background: var(--mt-accent-green);
+}
+
+.slidev-layout.magnit-timeline .mt-timeline-desc {
+  width: 100%;
+  margin: 0;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: var(--mt-fg);
+  text-align: left;
+}
+
+.slidev-layout.magnit-timeline .mt-timeline-footer {
+  color: var(--mt-fg);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}

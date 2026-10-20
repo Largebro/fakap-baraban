@@ -1,0 +1,9 @@
+/* Розово-чёрно-белая тема колоды «Сектор «Брак» на барабане».
+   Включается классом fakap-pink на <html> (htmlAttrs в headmatter), другие колоды шаблона не трогает. */
+html.fakap-pink {
+  --mt-red: #db3a78;
+  --mt-red-soft: rgb(219 58 120 / 0.12);
+  --mt-surface-light: #fff4f8;
+  --mt-border: #f7d9e4;
+  --mt-ink-muted: #6b4a57;
+}
