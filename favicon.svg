@@ -1,7 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Magnit Tech">
-  <rect width="32" height="32" rx="6" fill="#f5f5f5"/>
-  <svg viewBox="0 0 100 152" width="26" height="26" x="3" y="3" fill="#ed0f00">
-    <path d="M59.9053 1.74487H93.3535L93.2554 70.4069H74.9128V13.3193L60.0034 70.4069H34.0099L19.1004 13.3193V70.4069H0.757812V1.74487H34.4022L47.2518 58.4401L59.9053 1.74487Z"/>
-    <path d="M68.5986 81.3381V97.1304H44.3707V150H25.0472V97.1304H0.819336V81.3381H68.5986Z"/>
-  </svg>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><circle cx="16" cy="16" r="15" fill="#db3a78"/><circle cx="16" cy="16" r="6" fill="#fff4f8"/></svg>
