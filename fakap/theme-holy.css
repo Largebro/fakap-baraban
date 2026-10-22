@@ -4,7 +4,7 @@ html.fakap-holy {
   --mt-red: #ec4fd6;
   --mt-red-soft: rgb(236 79 214 / 0.14);
   --mt-surface-dark: #060912;
-  --mt-ink-muted-on-dark: #9aa3bd;
+  --mt-ink-muted-on-dark: #c4cadb;
   --holy-cyan: #5cc8f5;
   --holy-grid: rgb(255 255 255 / 0.07);
 }
@@ -28,7 +28,7 @@ html.fakap-holy .slidev-layout.mt-dark {
 /* Неоновое свечение на акцентах */
 html.fakap-holy .mt-brand-bar { box-shadow: 0 0 14px var(--mt-red); }
 html.fakap-holy .mt-kicker { color: var(--mt-red); text-shadow: 0 0 10px rgb(236 79 214 / 0.55); }
-html.fakap-holy .slidev-layout h1 { text-shadow: 0 0 22px rgb(236 79 214 / 0.25); }
+html.fakap-holy .slidev-layout h1:not(.double) { text-shadow: 0 0 22px rgb(236 79 214 / 0.25); }
 html.fakap-holy .mt-metric { text-shadow: 0 0 18px rgb(236 79 214 / 0.5); }
 
 /* Блоки кода: тёмная подложка с розовой рамкой */
@@ -42,3 +42,10 @@ html.fakap-holy .duck-br { right: 6.5rem; bottom: 2rem; }
 html.fakap-holy .duck-bl { left: 3.5rem; bottom: 2rem; transform: scaleX(-1); }
 html.fakap-holy .duck-tl { left: 0.9rem; top: 0.8rem; width: 36px; transform: scaleX(-1); }
 html.fakap-holy .duck-tl.rooster { width: 40px; }
+
+/* Подсветка кода: тёмная палитра shiki вместо светлой из шаблона */
+html.fakap-holy .slidev-layout .shiki,
+html.fakap-holy .slidev-layout .shiki span { color: var(--shiki-dark) !important; background-color: transparent !important; }
+html.fakap-holy .slidev-layout pre.shiki { background: var(--slidev-code-background) !important; }
+/* Приглушённые строки кода на тёмном фоне иначе почти не видны */
+html.fakap-holy .slidev-code .dishonored { opacity: 0.5 !important; }
